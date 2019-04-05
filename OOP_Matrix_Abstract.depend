@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1554508913 source:c:\users\grizonel\desktop\poo\oop_matrix_abstract\main.cpp
+	<iostream>
+	<string>
+	<fstream>
+	"OOP_Matrix_Abstract.h"
+
+1554508660 c:\users\grizonel\desktop\poo\oop_matrix_abstract\oop_matrix_abstract.h
+

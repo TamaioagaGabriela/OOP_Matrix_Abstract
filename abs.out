@@ -1,0 +1,29 @@
+Vectorul nr. 1 este: 11 2 35 9 3 
+Suma: 60
+Maxim: 35
+Pozitie maxim: 2
+Vectorul nr. 2 este: 13 2 1 1 14 
+Produs scalar: 233
+Vectorul este sortat: 2 3 9 11 35 
+
+Matricea oarecare nr. 1 este: 
+1 1 1 
+1 2 2 
+Matricea oarecare nu este diagonala.
+Matricea oarecare nr. 2 este: 
+2 2 2 
+3 3 3 
+Matricea oarecare nu este diagonala.
+
+Suma matricilor oarecare este: 
+3 3 3 
+4 5 5 
+
+Matricea A este:
+1 2 3 
+4 5 6 
+Vectorul x este:
+1 1 1 
+Vectorul y este:
+6 15 
+Da,se verifica ecuatia Ax=y!
