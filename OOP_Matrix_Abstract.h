@@ -41,7 +41,7 @@ public:
     {
         v = new int[vect.dim];
         dim = vect.dim;
-        for (int i = 0; i <= vect.dim; i++)
+        for (int i = 0; i < vect.dim; i++)
             v[i] = vect.v[i];
     }
 
@@ -50,7 +50,7 @@ public:
         delete []this->v;
         v = new int[vect.dim];
         dim = vect.dim;
-        for (int i = 0; i <= vect.dim; i++)
+        for (int i = 0; i < vect.dim; i++)
         {
             v[i]= vect.v[i];
         }
@@ -77,7 +77,7 @@ public:
 
     MatriceIntregi()                        // constructorul de initializare
     {
-        a = nullptr;
+        a = NULL;
     };
 
     virtual ~MatriceIntregi() = 0;          // destructorul - de tip virtual
@@ -113,7 +113,25 @@ public:
         nr_linii = 0;
         nr_coloane = 0;
     }
+/*
+        MatriceIntregi_Oarecare(MatriceIntregi_Oarecare &mat)       //constructorul de copiere
+    {
+        a = new VectorIntregi(nr_linii);
+        nr_linii = mat.nr_linii;
+        nr_coloane = mat.nr_coloane;
 
+        for(int i = 0; i < nr_linii; i++)
+        {
+            a[i].set_Nr(nr_coloane);
+            a[i].set_Dim_Vector(nr_coloane);     // aloc memorie pentru fiecare vector
+        }
+        for (int i = 0; i < nr_linii; i++)
+            for (int j = 0; j < nr_coloane; j++)
+        {
+            a[i].v[j]=mat.a[i].v[j];
+        }
+    }
+*/
     MatriceIntregi_Oarecare(int nr_linii, int nr_coloane): MatriceIntregi()  // constructor cu parametrii (pt alocare dinamica)
     {
         a = new VectorIntregi(nr_linii);
@@ -126,12 +144,12 @@ public:
 
     virtual ~MatriceIntregi_Oarecare()          // destructorul de tip virtual implementat
     {
-        if(a != nullptr)
+        if(a != NULL)
         {
             for (int i = 0; i < nr_linii; i++)
-                delete &(a[i]);                 // sterg memoria alocata pt fiecare vector linie
-            delete a;                           // sterg memoria alocata pt matrice
-        }
+                delete a[i].v;                 // sterg memoria alocata pt fiecare vector linie
+            delete &a;                           // sterg memoria alocata pt matrice
+         }
     }
 };
 
@@ -177,11 +195,11 @@ public:
 
     virtual ~MatriceIntregi_Patratica()                  // destructorul de tip virtual
     {
-        if (a != nullptr)
+        if (a != NULL)
         {
             for (int i = 0; i < dim; i++)
-                delete &(a[i]);                          // sterg memoria alocata pt fiecare vector
-            delete a;                                    // sterg memoria alocata pt matrice
+                delete a[i].v;                          // sterg memoria alocata pt fiecare vector
+            delete &a;                                    // sterg memoria alocata pt matrice
         }
     }
 };

@@ -283,8 +283,8 @@ int main()
             cout << "Produs scalar dintre cei doi vectori este: " << v1 * v2 << endl;
             v1.sortare();
             cout << "Vectorul nr. 1 este sortat: " << v1 << endl;
-            delete []v1.get_Vect();                                 // eliberez memoria alocata pt vectori
-            delete []v2.get_Vect();
+           // delete []v1.get_Vect();                                 // eliberez memoria alocata pt vectori
+            //delete []v2.get_Vect();
         }
 
         else if (cerinta == 2)
@@ -314,8 +314,8 @@ int main()
                 else cout << "Matricea oarecare nu este diagonala" << endl << endl;
                 cout << "Suma celor doua matrici este: " << endl;
                 cout << m1+m2;                                       // suma a doua matrici oarecare
-                delete &m1;                                          // eliberez memoria alocata pt matrice
-                delete &m2;
+                //delete []m1.get_A();                                          // eliberez memoria alocata pt matrice
+                //delete []m2.get_A();
             }
 
             else
@@ -345,8 +345,8 @@ int main()
 
                 cout << "Suma celor doua matrici patrate este: " << endl;
                 cout << m3+m4;                                       // suma a doua matrici patratice
-                delete &m3;                                          // eliberez memoria alocata pt matrice
-                delete &m4;
+                //delete &m3;                                          // eliberez memoria alocata pt matrice
+                //delete &m4;
 
             }
         }
@@ -373,9 +373,10 @@ int main()
             if (ok == 0)
                 cout << "Nu, nu se verifica ecuatia Ax=y!" << endl;
             else cout << "Da,se verifica ecuatia Ax=y!" << endl;
-            delete []y.get_Vect();
-            delete []x.get_Vect();      // eliberez memoria alocata pt vectori, respectiv pt matrice
-            delete &a;
+         //   delete []y.get_Vect();
+           // delete []x.get_Vect();      // eliberez memoria alocata pt vectori, respectiv pt matrice
+            //delete []a.get_A();
+           // delete &a;
         }
     }
     else if (i == 2)
@@ -402,8 +403,8 @@ int main()
         v1.sortare();
         g << "Vectorul este sortat: " << v1;
         g << endl;
-   //     delete []v1.get_Vect();
-     //   delete []v2.get_Vect();          // eliberez memoria alocata pt vectori
+       // delete []v1.get_Vect();
+        //delete []v2.get_Vect();          // eliberez memoria alocata pt vectori
 
         //SUBPUNCT 2
         int nr_linii, nr_coloane;
@@ -428,8 +429,8 @@ int main()
             else g << "Matricea oarecare nu este diagonala." << endl << endl;
             g << "Suma matricilor oarecare este: " << endl;
             g << m2 + m1 << endl;
-            delete &m1;                                                  // eliberez memoria alocata pt matrice
-            delete &m2;
+          //  delete &m1;                                                  // eliberez memoria alocata pt matrice
+            //delete &m2;
         }
 
         else
@@ -461,8 +462,8 @@ int main()
             g << "Suma celor doua matrici patrate este: " << endl;     // adunarea a doua matrici
             g << m4 + m3;
             g << endl;
-            delete &m3;                                                // eliberez memoria alocata pt matrice
-            delete &m4;
+          //  delete &m3;                                                // eliberez memoria alocata pt matrice
+            //delete &m4;
         }
         //SUBPUNCT 3
         int nr_linii_a, nr_coloane_a, ok;
@@ -484,9 +485,9 @@ int main()
             g << "Nu, nu se verifica ecuatia Ax=y!";
         else g << "Da,se verifica ecuatia Ax=y!";
 
-        delete []y.get_Vect();                              // eliberez memoria alocata vectorilor
-        delete []x.get_Vect();
-        delete &a;                                          // eliberez memoria alocata matricii
+       // delete []y.get_Vect();                              // eliberez memoria alocata vectorilor
+        //delete []x.get_Vect();
+        //delete &a;                                          // eliberez memoria alocata matricii
 
         g.close();                                          // inchid fisierele
         f.close();
