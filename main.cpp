@@ -149,6 +149,21 @@ MatriceIntregi_Oarecare MatriceIntregi_Oarecare :: operator+ (MatriceIntregi_Oar
     return rezultat;
 };
 
+MatriceIntregi_Oarecare MatriceIntregi_Oarecare :: operator- (MatriceIntregi_Oarecare & B)    // suma a doua matrice oarecare
+{
+    MatriceIntregi_Oarecare rezultat(this -> nr_linii, this -> nr_coloane);
+    rezultat.set_Dimensiuni(this -> nr_linii, this -> nr_coloane);
+    for(int j = 0; j < this -> nr_linii; j++)
+    {
+        rezultat.a[j].set_Nr(this -> nr_coloane);                             // pt fiecare vector linie setez dimensiunea
+        for (int k = 0; k < this -> nr_coloane; k++)
+        {
+            rezultat.a[j].v[k] = B.a[j].v[k]- this -> a[j].v[k];
+        }
+    }
+    return rezultat;
+};
+
 int verificare(MatriceIntregi_Oarecare A, VectorIntregi x, VectorIntregi y)   // calculez produsul dintre o matrice oarecare si vector cu ajutorul prod. scalar
 {
     int ok = 1;
@@ -314,6 +329,8 @@ int main()
                 else cout << "Matricea oarecare nu este diagonala" << endl << endl;
                 cout << "Suma celor doua matrici este: " << endl;
                 cout << m1+m2;                                       // suma a doua matrici oarecare
+                cout << "Diferenta celor doua matrici este: " << endl;
+                cout << m1-m2;
                 //delete []m1.get_A();                                          // eliberez memoria alocata pt matrice
                 //delete []m2.get_A();
             }
@@ -345,6 +362,7 @@ int main()
 
                 cout << "Suma celor doua matrici patrate este: " << endl;
                 cout << m3+m4;                                       // suma a doua matrici patratice
+
                 //delete &m3;                                          // eliberez memoria alocata pt matrice
                 //delete &m4;
 

@@ -104,6 +104,7 @@ public:
                     return false;
         return true;
     };
+    MatriceIntregi_Oarecare operator- (MatriceIntregi_Oarecare & B);
 
     friend ostream & operator << (ostream &out, const MatriceIntregi_Oarecare &matrice);
     friend istream & operator >> (istream &in,  MatriceIntregi_Oarecare &matrice);
@@ -113,25 +114,25 @@ public:
         nr_linii = 0;
         nr_coloane = 0;
     }
-/*
-        MatriceIntregi_Oarecare(MatriceIntregi_Oarecare &mat)       //constructorul de copiere
-    {
-        a = new VectorIntregi(nr_linii);
-        nr_linii = mat.nr_linii;
-        nr_coloane = mat.nr_coloane;
+    /*
+            MatriceIntregi_Oarecare(MatriceIntregi_Oarecare &mat)       //constructorul de copiere
+        {
+            a = new VectorIntregi(nr_linii);
+            nr_linii = mat.nr_linii;
+            nr_coloane = mat.nr_coloane;
 
-        for(int i = 0; i < nr_linii; i++)
-        {
-            a[i].set_Nr(nr_coloane);
-            a[i].set_Dim_Vector(nr_coloane);     // aloc memorie pentru fiecare vector
+            for(int i = 0; i < nr_linii; i++)
+            {
+                a[i].set_Nr(nr_coloane);
+                a[i].set_Dim_Vector(nr_coloane);     // aloc memorie pentru fiecare vector
+            }
+            for (int i = 0; i < nr_linii; i++)
+                for (int j = 0; j < nr_coloane; j++)
+            {
+                a[i].v[j]=mat.a[i].v[j];
+            }
         }
-        for (int i = 0; i < nr_linii; i++)
-            for (int j = 0; j < nr_coloane; j++)
-        {
-            a[i].v[j]=mat.a[i].v[j];
-        }
-    }
-*/
+    */
     MatriceIntregi_Oarecare(int nr_linii, int nr_coloane): MatriceIntregi()  // constructor cu parametrii (pt alocare dinamica)
     {
         a = new VectorIntregi(nr_linii);
@@ -146,10 +147,13 @@ public:
     {
         if(a != NULL)
         {
-            for (int i = 0; i < nr_linii; i++)
-                delete a[i].v;                 // sterg memoria alocata pt fiecare vector linie
-            delete &a;                           // sterg memoria alocata pt matrice
-         }
+            //  for (int i = 0; i < nr_linii; i++)
+            //    {delete a[i].v;
+            //  cout<<"da";
+            //}                 // sterg memoria alocata pt fiecare vector linie
+            delete a;
+            cout<<"bla\n";                           // sterg memoria alocata pt matrice
+        }
     }
 };
 
@@ -197,9 +201,9 @@ public:
     {
         if (a != NULL)
         {
-            for (int i = 0; i < dim; i++)
-                delete a[i].v;                          // sterg memoria alocata pt fiecare vector
-            delete &a;                                    // sterg memoria alocata pt matrice
+            // for (int i = 0; i < dim; i++)
+            //   delete a[i].v;                          // sterg memoria alocata pt fiecare vector
+            delete a;                                    // sterg memoria alocata pt matrice
         }
     }
 };
